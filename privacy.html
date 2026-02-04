@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Book a Cook</title>
+    <title>Book-a-Cook - Privacy Policy</title>
     <style>
         * {
             margin: 0;
@@ -13,10 +13,9 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
+            line-height: 1.8;
             color: #333;
-            background: linear-gradient(135deg, #fff5eb 0%, #ffffff 100%);
-            min-height: 100vh;
+            background: #f9f9f9;
         }
         
         .container {
@@ -28,17 +27,22 @@
         header {
             text-align: center;
             margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e85d04;
         }
         
         .logo {
-            font-size: 48px;
-            margin-bottom: 10px;
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            margin-bottom: 16px;
         }
         
         h1 {
-            color: #e67e22;
             font-size: 2em;
-            margin-bottom: 10px;
+            color: #e85d04;
+            margin-bottom: 8px;
         }
         
         .last-updated {
@@ -46,181 +50,194 @@
             font-size: 0.9em;
         }
         
-        .card {
+        .content {
             background: white;
             border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
         
         h2 {
-            color: #e67e22;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            color: #e85d04;
+            margin-top: 30px;
+            margin-bottom: 16px;
+            font-size: 1.4em;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
         }
         
-        h2::before {
-            content: "";
-            width: 4px;
-            height: 24px;
-            background: #e67e22;
-            border-radius: 2px;
+        h2:first-child {
+            margin-top: 0;
         }
         
         p {
-            margin-bottom: 15px;
-            color: #555;
+            margin-bottom: 16px;
+            color: #444;
         }
         
         ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
+            padding-left: 24px;
         }
         
         li {
             margin-bottom: 8px;
-            color: #555;
+            color: #444;
         }
         
         .highlight {
             background: #fff5eb;
-            padding: 15px 20px;
-            border-radius: 10px;
-            border-left: 4px solid #e67e22;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #e85d04;
+            margin: 20px 0;
         }
         
-        .contact-box {
-            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+        .contact-section {
+            background: linear-gradient(135deg, #e85d04 0%, #f4a261 100%);
             color: white;
-            padding: 25px;
+            padding: 24px;
             border-radius: 12px;
+            margin-top: 30px;
             text-align: center;
         }
         
-        .contact-box h3 {
-            margin-bottom: 10px;
+        .contact-section a {
+            color: white;
+            font-weight: 600;
         }
         
-        .contact-box a {
-            color: white;
-            font-weight: bold;
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #e85d04;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
         }
         
         footer {
             text-align: center;
-            padding: 30px;
+            margin-top: 40px;
+            padding: 20px;
             color: #888;
             font-size: 0.9em;
+        }
+        
+        @media (max-width: 600px) {
+            .content {
+                padding: 24px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="logo">🍳</div>
+            <img src="1024.png" alt="Book-a-Cook Logo" class="logo">
             <h1>Privacy Policy</h1>
-            <p class="last-updated">Last updated: February 2, 2026</p>
+            <p class="last-updated">Last Updated: February 4, 2025</p>
         </header>
         
-        <div class="card">
+        <div class="content">
             <h2>Introduction</h2>
-            <p>Book a Cook ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
+            <p>Welcome to Book-a-Cook ("we," "our," or "us"). We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
+            
             <div class="highlight">
-                <strong>Summary:</strong> We collect minimal data necessary to provide the app's functionality. We do not sell your personal information to third parties.
+                <strong>Summary:</strong> Book-a-Cook is designed with privacy in mind. Most of your data stays on your device. We only collect minimal data necessary to provide our services.
             </div>
-        </div>
-        
-        <div class="card">
+            
             <h2>Information We Collect</h2>
-            <p><strong>Account Information:</strong></p>
+            <p>We collect the following types of information:</p>
+            
+            <p><strong>1. Information You Provide:</strong></p>
             <ul>
-                <li>Email address (if you sign in with email)</li>
-                <li>Name (if provided via Apple Sign In)</li>
-                <li>Unique user identifier for authentication</li>
+                <li><strong>Account Information:</strong> Email address and password when you create an account</li>
+                <li><strong>Cookbook Data:</strong> Information about cookbooks you add to your collection</li>
+                <li><strong>Kitchen Ingredients:</strong> Items you add to your fridge, freezer, or pantry</li>
+                <li><strong>Saved Recipes:</strong> Recipes you save or mark as favorites</li>
             </ul>
             
-            <p><strong>Usage Data:</strong></p>
+            <p><strong>2. Automatically Collected Information:</strong></p>
             <ul>
-                <li>Cookbooks you add to your library</li>
-                <li>Recipes you save from TikTok</li>
-                <li>Ingredients you scan and track</li>
+                <li><strong>Device Information:</strong> Device type and operating system version for app compatibility</li>
+                <li><strong>Usage Data:</strong> How you interact with the app to improve our services</li>
             </ul>
             
-            <p><strong>Images:</strong></p>
+            <p><strong>3. Camera and Photo Access:</strong></p>
             <ul>
-                <li>Photos you take for ingredient scanning are processed by AI but not stored on our servers</li>
-                <li>Images are only sent to OpenAI for processing and are not retained</li>
+                <li>We request camera access to scan cookbook barcodes and kitchen ingredients</li>
+                <li>Photos are processed locally on your device or sent securely to our AI service for recognition</li>
+                <li>We do not store photos on our servers after processing</li>
             </ul>
-        </div>
-        
-        <div class="card">
+            
             <h2>How We Use Your Information</h2>
+            <p>We use your information to:</p>
             <ul>
-                <li>To provide and maintain the app's functionality</li>
-                <li>To personalize your experience with recipe recommendations</li>
-                <li>To process your subscription payments (via Apple)</li>
-                <li>To communicate with you about app updates or support</li>
+                <li>Provide and maintain the Book-a-Cook service</li>
+                <li>Sync your data across devices (if you have an account)</li>
+                <li>Generate personalized recipe recommendations</li>
+                <li>Create shopping lists based on your selected recipes</li>
+                <li>Improve our app and develop new features</li>
+                <li>Respond to your support requests</li>
             </ul>
-        </div>
-        
-        <div class="card">
+            
+            <h2>Data Storage and Security</h2>
+            <p>We take data security seriously:</p>
+            <ul>
+                <li><strong>Local Storage:</strong> Most of your data is stored locally on your device</li>
+                <li><strong>Cloud Sync:</strong> If you create an account, your data is synced securely via Firebase</li>
+                <li><strong>Encryption:</strong> All data transmitted to our servers is encrypted using industry-standard protocols</li>
+                <li><strong>No Sale of Data:</strong> We never sell your personal information to third parties</li>
+            </ul>
+            
             <h2>Third-Party Services</h2>
             <p>We use the following third-party services:</p>
             <ul>
-                <li><strong>Firebase (Google):</strong> For user authentication and analytics</li>
+                <li><strong>Firebase (Google):</strong> For user authentication and data synchronization</li>
+                <li><strong>OpenAI:</strong> For AI-powered features like ingredient recognition and recipe extraction</li>
+                <li><strong>Eat Your Books API:</strong> For cookbook and recipe information</li>
                 <li><strong>RevenueCat:</strong> For subscription management</li>
-                <li><strong>OpenAI:</strong> For AI-powered ingredient recognition</li>
-                <li><strong>Groq:</strong> For recipe extraction from videos</li>
             </ul>
-            <p>Each of these services has their own privacy policies governing their use of your data.</p>
-        </div>
-        
-        <div class="card">
-            <h2>Data Storage & Security</h2>
-            <ul>
-                <li>Your cookbook and recipe data is stored locally on your device</li>
-                <li>Authentication data is securely managed by Firebase</li>
-                <li>We use industry-standard encryption for data transmission</li>
-                <li>We do not store images on our servers</li>
-            </ul>
-        </div>
-        
-        <div class="card">
+            <p>These services have their own privacy policies governing their use of your data.</p>
+            
+            <h2>Data Retention</h2>
+            <p>We retain your data as long as your account is active or as needed to provide services. You can request deletion of your data at any time by contacting us.</p>
+            
             <h2>Your Rights</h2>
             <p>You have the right to:</p>
             <ul>
-                <li>Access your personal data</li>
-                <li>Delete your account and associated data</li>
-                <li>Opt out of marketing communications</li>
-                <li>Request a copy of your data</li>
+                <li>Access the personal data we hold about you</li>
+                <li>Request correction of inaccurate data</li>
+                <li>Request deletion of your data</li>
+                <li>Export your data in a portable format</li>
+                <li>Opt-out of marketing communications</li>
             </ul>
-            <p>To exercise any of these rights, please contact us at the email below.</p>
-        </div>
-        
-        <div class="card">
+            
             <h2>Children's Privacy</h2>
-            <p>Book a Cook is not intended for children under 13. We do not knowingly collect personal information from children under 13. If you believe we have collected such information, please contact us immediately.</p>
-        </div>
-        
-        <div class="card">
+            <p>Book-a-Cook is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have collected such information, please contact us immediately.</p>
+            
             <h2>Changes to This Policy</h2>
-            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date.</p>
-        </div>
-        
-        <div class="card">
-            <div class="contact-box">
-                <h3>Questions or Concerns?</h3>
-                <p>Contact us at:<br>
-                <a href="mailto:chenxu1098@gmail.com">chenxu1098@gmail.com</a></p>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last Updated" date.</p>
+            
+            <div class="contact-section">
+                <h3>Contact Us</h3>
+                <p>If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
+                <p><a href="mailto:chenxu1098@gmail.com">chenxu1098@gmail.com</a></p>
             </div>
         </div>
         
+        <a href="index.html" class="back-link">← Back to Support</a>
+        
         <footer>
-            <p>© 2024 Book a Cook. All rights reserved.</p>
+            <p>© 2025 Book-a-Cook. All rights reserved.</p>
         </footer>
     </div>
 </body>
