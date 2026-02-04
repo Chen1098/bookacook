@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - Book a Cook</title>
+    <title>Book-a-Cook - Terms of Service</title>
     <style>
         * {
             margin: 0;
@@ -13,10 +13,9 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
+            line-height: 1.8;
             color: #333;
-            background: linear-gradient(135deg, #fff5eb 0%, #ffffff 100%);
-            min-height: 100vh;
+            background: #f9f9f9;
         }
         
         .container {
@@ -28,17 +27,22 @@
         header {
             text-align: center;
             margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #e85d04;
         }
         
         .logo {
-            font-size: 48px;
-            margin-bottom: 10px;
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            margin-bottom: 16px;
         }
         
         h1 {
-            color: #e67e22;
             font-size: 2em;
-            margin-bottom: 10px;
+            color: #e85d04;
+            margin-bottom: 8px;
         }
         
         .last-updated {
@@ -46,204 +50,226 @@
             font-size: 0.9em;
         }
         
-        .card {
+        .content {
             background: white;
             border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
         
         h2 {
-            color: #e67e22;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            color: #e85d04;
+            margin-top: 30px;
+            margin-bottom: 16px;
+            font-size: 1.4em;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
         }
         
-        h2::before {
-            content: "";
-            width: 4px;
-            height: 24px;
-            background: #e67e22;
-            border-radius: 2px;
+        h2:first-child {
+            margin-top: 0;
         }
         
         p {
-            margin-bottom: 15px;
-            color: #555;
+            margin-bottom: 16px;
+            color: #444;
         }
         
         ul, ol {
-            margin-left: 20px;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
+            padding-left: 24px;
         }
         
         li {
             margin-bottom: 8px;
-            color: #555;
+            color: #444;
         }
         
         .highlight {
             background: #fff5eb;
-            padding: 15px 20px;
-            border-radius: 10px;
-            border-left: 4px solid #e67e22;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #e85d04;
+            margin: 20px 0;
         }
         
-        .contact-box {
-            background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
-            color: white;
-            padding: 25px;
+        .warning {
+            background: #fff3cd;
+            padding: 20px;
             border-radius: 12px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #e85d04 0%, #f4a261 100%);
+            color: white;
+            padding: 24px;
+            border-radius: 12px;
+            margin-top: 30px;
             text-align: center;
         }
         
-        .contact-box h3 {
-            margin-bottom: 10px;
+        .contact-section a {
+            color: white;
+            font-weight: 600;
         }
         
-        .contact-box a {
-            color: white;
-            font-weight: bold;
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #e85d04;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
         }
         
         footer {
             text-align: center;
-            padding: 30px;
+            margin-top: 40px;
+            padding: 20px;
             color: #888;
             font-size: 0.9em;
         }
         
-        footer a {
-            color: #e67e22;
-            text-decoration: none;
+        @media (max-width: 600px) {
+            .content {
+                padding: 24px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="logo">🍳</div>
+            <img src="1024.png" alt="Book-a-Cook Logo" class="logo">
             <h1>Terms of Service</h1>
-            <p class="last-updated">Last updated: February 2, 2026</p>
+            <p class="last-updated">Last Updated: February 4, 2025</p>
         </header>
         
-        <div class="card">
-            <h2>Agreement to Terms</h2>
-            <p>By downloading, installing, or using Book a Cook ("the App"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the App.</p>
-        </div>
-        
-        <div class="card">
-            <h2>Description of Service</h2>
-            <p>Book a Cook is a mobile application that helps you:</p>
+        <div class="content">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By downloading, installing, or using Book-a-Cook ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use the App.</p>
+            
+            <div class="highlight">
+                <strong>Plain Language:</strong> By using Book-a-Cook, you're agreeing to follow these rules. We've tried to keep them fair and straightforward.
+            </div>
+            
+            <h2>2. Description of Service</h2>
+            <p>Book-a-Cook is a mobile application that helps users:</p>
             <ul>
-                <li>Organize and browse your physical cookbook collection</li>
-                <li>Extract and save recipes from TikTok cooking videos</li>
-                <li>Track ingredients in your kitchen using AI-powered image recognition</li>
-                <li>Get recipe recommendations based on available ingredients</li>
+                <li>Organize and manage their cookbook collection</li>
+                <li>Track kitchen ingredients across fridge, freezer, and pantry</li>
+                <li>Discover recipes based on available ingredients</li>
+                <li>Save recipes from various sources including TikTok</li>
+                <li>Generate shopping lists</li>
             </ul>
-        </div>
-        
-        <div class="card">
-            <h2>User Accounts</h2>
-            <p>You may use the App without creating an account, but some features require signing in with Apple ID or email. You are responsible for:</p>
+            
+            <h2>3. User Accounts</h2>
+            <p>Some features require you to create an account. You agree to:</p>
             <ul>
-                <li>Maintaining the confidentiality of your account</li>
-                <li>All activities that occur under your account</li>
-                <li>Notifying us immediately of any unauthorized use</li>
+                <li>Provide accurate and complete information</li>
+                <li>Keep your login credentials secure</li>
+                <li>Notify us immediately of any unauthorized access</li>
+                <li>Accept responsibility for all activities under your account</li>
             </ul>
-        </div>
-        
-        <div class="card">
-            <h2>Subscriptions & Payments</h2>
-            <p><strong>Free Tier:</strong> Limited to 1 cookbook, 3 recipe imports, and 3 ingredient scans per month.</p>
-            <p><strong>Pro Subscription:</strong> Unlimited access to all features.</p>
+            
+            <h2>4. Subscription and Payments</h2>
+            <p>Book-a-Cook offers both free and premium subscription tiers:</p>
             <ul>
-                <li>Payment is charged to your Apple ID account</li>
-                <li>Subscriptions automatically renew unless cancelled 24 hours before the end of the current period</li>
-                <li>You can manage and cancel subscriptions in your Apple ID account settings</li>
-                <li>No refunds for partial subscription periods</li>
+                <li><strong>Free Tier:</strong> Basic features with limited AI usage</li>
+                <li><strong>Premium Subscription:</strong> Full access to all features including unlimited AI usage</li>
             </ul>
-        </div>
-        
-        <div class="card">
-            <h2>Acceptable Use</h2>
-            <p>You agree NOT to:</p>
+            <p>Subscriptions are processed through the Apple App Store. By subscribing, you also agree to Apple's Terms of Service.</p>
+            
+            <div class="warning">
+                <strong>Auto-Renewal:</strong> Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period. You can manage subscriptions in your App Store account settings.
+            </div>
+            
+            <h2>5. User Content</h2>
+            <p>You retain ownership of any content you create or upload to the App (recipes, notes, photos). By using the App, you grant us a limited license to:</p>
+            <ul>
+                <li>Store and sync your content across your devices</li>
+                <li>Process your content to provide App features (e.g., AI recognition)</li>
+            </ul>
+            <p>We will not share your personal content with third parties without your consent.</p>
+            
+            <h2>6. Acceptable Use</h2>
+            <p>You agree not to:</p>
             <ul>
                 <li>Use the App for any illegal purpose</li>
-                <li>Attempt to gain unauthorized access to our systems</li>
-                <li>Upload malicious content or viruses</li>
-                <li>Use the App to infringe on intellectual property rights</li>
-                <li>Reverse engineer or attempt to extract the source code</li>
+                <li>Attempt to reverse engineer or hack the App</li>
+                <li>Interfere with other users' enjoyment of the App</li>
+                <li>Upload malicious content or malware</li>
+                <li>Violate any intellectual property rights</li>
                 <li>Use automated systems to access the App without permission</li>
             </ul>
-        </div>
-        
-        <div class="card">
-            <h2>Content & Intellectual Property</h2>
-            <p><strong>Your Content:</strong> You retain ownership of any content you create or upload (recipes, photos, etc.). By using the App, you grant us a license to use this content to provide the service.</p>
-            <p><strong>Third-Party Content:</strong> Recipes extracted from TikTok videos belong to their original creators. We do not claim ownership of this content.</p>
-            <p><strong>Our Content:</strong> The App, its design, features, and original content are owned by Book a Cook and protected by intellectual property laws.</p>
-        </div>
-        
-        <div class="card">
-            <h2>Third-Party Services</h2>
+            
+            <h2>7. Intellectual Property</h2>
+            <p>The App, including its design, code, and content, is protected by intellectual property laws. You may not:</p>
+            <ul>
+                <li>Copy or modify the App</li>
+                <li>Create derivative works</li>
+                <li>Distribute or sell the App</li>
+                <li>Remove any copyright notices</li>
+            </ul>
+            <p>Recipe content from cookbooks and third-party sources remains the property of their respective owners.</p>
+            
+            <h2>8. Third-Party Services</h2>
             <p>The App integrates with third-party services including:</p>
             <ul>
-                <li>TikTok (for video sharing)</li>
-                <li>OpenAI (for image recognition)</li>
-                <li>Firebase (for authentication)</li>
+                <li>Firebase (authentication and data storage)</li>
+                <li>OpenAI (AI features)</li>
+                <li>Eat Your Books (cookbook database)</li>
+                <li>TikTok (recipe extraction via Share Sheet)</li>
             </ul>
             <p>Your use of these services is subject to their respective terms and policies.</p>
-        </div>
-        
-        <div class="card">
-            <h2>Disclaimers</h2>
-            <div class="highlight">
-                <p><strong>The App is provided "AS IS" without warranties of any kind.</strong></p>
-            </div>
-            <p style="margin-top: 15px;">We do not guarantee:</p>
+            
+            <h2>9. Disclaimer of Warranties</h2>
+            <p>The App is provided "AS IS" without warranties of any kind. We do not guarantee:</p>
             <ul>
-                <li>The accuracy of AI-generated content or ingredient recognition</li>
-                <li>That the App will be uninterrupted or error-free</li>
-                <li>The accuracy of cookbook or recipe data</li>
+                <li>The App will be error-free or uninterrupted</li>
+                <li>Recipe information or AI-generated content is accurate</li>
+                <li>The App will meet your specific requirements</li>
             </ul>
-            <p><strong>Nutritional & Allergy Disclaimer:</strong> Always verify ingredients and nutritional information. The App is not a substitute for professional dietary advice.</p>
-        </div>
-        
-        <div class="card">
-            <h2>Limitation of Liability</h2>
-            <p>To the maximum extent permitted by law, Book a Cook shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of the App.</p>
-        </div>
-        
-        <div class="card">
-            <h2>Changes to Terms</h2>
-            <p>We may update these Terms from time to time. Continued use of the App after changes constitutes acceptance of the new terms. We will notify users of significant changes through the App or via email.</p>
-        </div>
-        
-        <div class="card">
-            <h2>Termination</h2>
-            <p>We reserve the right to suspend or terminate your access to the App at any time for violation of these terms or for any other reason at our discretion.</p>
-        </div>
-        
-        <div class="card">
-            <h2>Governing Law</h2>
-            <p>These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to conflict of law principles.</p>
-        </div>
-        
-        <div class="card">
-            <div class="contact-box">
-                <h3>Questions about these Terms?</h3>
-                <p>Contact us at:<br>
-                <a href="mailto:chenxu1098@gmail.com">chenxu1098@gmail.com</a></p>
+            
+            <div class="warning">
+                <strong>Food Safety:</strong> Always use your own judgment when preparing food. We are not responsible for any health issues arising from following recipes or ingredient suggestions in the App.
+            </div>
+            
+            <h2>10. Limitation of Liability</h2>
+            <p>To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the App.</p>
+            
+            <h2>11. Termination</h2>
+            <p>We reserve the right to suspend or terminate your access to the App at any time for violation of these Terms. You may also delete your account at any time through the App settings.</p>
+            
+            <h2>12. Changes to Terms</h2>
+            <p>We may modify these Terms at any time. We will notify you of significant changes through the App or via email. Continued use of the App after changes constitutes acceptance of the new Terms.</p>
+            
+            <h2>13. Governing Law</h2>
+            <p>These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which the developer resides, without regard to conflict of law principles.</p>
+            
+            <h2>14. Severability</h2>
+            <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</p>
+            
+            <div class="contact-section">
+                <h3>Contact Us</h3>
+                <p>If you have any questions about these Terms of Service, please contact us at:</p>
+                <p><a href="mailto:chenxu1098@gmail.com">chenxu1098@gmail.com</a></p>
             </div>
         </div>
+        
+        <a href="index.html" class="back-link">← Back to Support</a>
         
         <footer>
-            <p><a href="privacy.html">Privacy Policy</a> • <a href="support.html">Help & Support</a> • © 2024 Book a Cook</p>
+            <p>© 2025 Book-a-Cook. All rights reserved.</p>
         </footer>
     </div>
 </body>
