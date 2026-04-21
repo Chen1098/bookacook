@@ -347,11 +347,226 @@ int main() {
 `,
 
             "5.cpp": `
-// And can easily import TikTok videos!
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include <random>
+#include <chrono>
+#include <algorithm>
+
+using namespace std;
+
+struct Point {
+    long long x, y;
+};
+
+int main() {
+    // Optimize standard I/O operations for speed
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int n;
+    long long r;
+    if (!(cin >> n >> r)) return 0;
+
+    vector<Point> pts(n);
+    for (int i = 0; i < n; ++i) {
+        cin >> pts[i].x >> pts[i].y;
+    }
+
+    long long H = 0;
+    while (H * H < 3LL * r * r) {
+        H++;
+    }
+    long long shift_x = (20000000LL / (2 * r) + 1) * (2 * r);
+    long long shift_y = (20000000LL / (2 * H) + 1) * (2 * H);
+
+    for (int i = 0; i < n; ++i) {
+        pts[i].x += shift_x;
+        pts[i].y += shift_y;
+    }
+    mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+    
+    // The translation invariant fundamental domain of this hexagonal lattice is 2r by 2H
+    uniform_int_distribution<long long> dist_x(0, 2 * r - 1);
+    uniform_int_distribution<long long> dist_y(0, 2 * H - 1);
+
+    // Number of points we strictly need to cover (ceil(89n / 100))
+    int required = (89 * n + 99) / 100;
+
+    // Constantly generate and test randomly shifted grids until one hits >= 89% points
+    while (true) {
+        long long dx = dist_x(rng);
+        long long dy = dist_y(rng);
+
+        int covered = 0;
+        vector<pair<long long, long long>> covering_centers;
+        
+        for (int i = 0; i < n; ++i) {
+            long long P_x = pts[i].x;
+            long long P_y = pts[i].y;
+            long long best_dist = 2e18; 
+            long long best_cx = -1, best_cy = -1;
+            
+            long long center_i = (P_y - dy) / H; 
+            
+            for (long long i_cand = center_i - 1; i_cand <= center_i + 2; ++i_cand) {
+                long long cy = i_cand * H + dy;
+                long long x_offset = (i_cand % 2) * r + dx;
+                long long x_rel = P_x - x_offset;
+                long long center_j = x_rel / (2 * r);
+                
+                for (long long j = center_j - 1; j <= center_j + 2; ++j) {
+                    long long cx = j * (2 * r) + x_offset;
+                    long long dist = (P_x - cx) * (P_x - cx) + (P_y - cy) * (P_y - cy);
+                    if (dist < best_dist) {
+                        best_dist = dist;
+                        best_cx = cx;
+                        best_cy = cy;
+                    }
+                }
+            }
+            if (best_dist <= r * r) {
+                covered++;
+                covering_centers.push_back({best_cx, best_cy});
+            }
+        }
+        if (covered >= required) {
+            sort(covering_centers.begin(), covering_centers.end());
+            covering_centers.erase(unique(covering_centers.begin(), covering_centers.end()), covering_centers.end());
+            
+            cout << covering_centers.size() << "\n";
+            for (auto c : covering_centers) {
+                cout << c.first - shift_x << " " << c.second - shift_y << "\n";
+            }
+            break;
+        }
+    }
+
+    return 0;
+}
 `,
 
             "6.cpp": `
-// And mamage your fridge
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+const int MOD1 = 1e9 + 7;
+const int MOD2 = 1e9 + 9;
+const int BASE1 = 331;
+const int BASE2 = 337;
+
+const int MAXN = 1000005;
+long long p1_pow[MAXN], p2_pow[MAXN];
+void precompute() {
+    p1_pow[0] = 1;
+    p2_pow[0] = 1;
+    for (int i = 1; i < MAXN; i++) {
+        p1_pow[i] = p1_pow[i - 1] * BASE1 % MOD1;
+        p2_pow[i] = p2_pow[i - 1] * BASE2 % MOD2;
+    }
+}
+
+void solve() {
+    long long n, l, k;
+    cin >> n >> l >> k;
+    string s;
+    cin >> s;
+
+    if (n < k * l) {
+        cout << "NO\n";
+        return;
+    }
+
+    vector<long long> h1(n + 1), h2(n + 1);
+    for (int i = 0; i < n; i++) {
+        h1[i + 1] = (h1[i] * BASE1 + s[i]) % MOD1;
+        h2[i + 1] = (h2[i] * BASE2 + s[i]) % MOD2;
+    }
+    auto get_hash = [&](int left, int right) {
+        long long res1 = (h1[right + 1] - h1[left] * p1_pow[right - left + 1]) % MOD1;
+        if (res1 < 0) res1 += MOD1;
+        long long res2 = (h2[right + 1] - h2[left] * p2_pow[right - left + 1]) % MOD2;
+        if (res2 < 0) res2 += MOD2;
+        return make_pair(res1, res2);
+    };
+
+    // Compare two substrings lexicographically in O(log(len))
+    auto cmp = [&](int i1, int j1, int i2, int j2) {
+        int len1 = j1 - i1 + 1;
+        int len2 = j2 - i2 + 1;
+        int low = 1, high = min(len1, len2), lcp = 0;
+        
+        // Binary search to find the longest common prefix (LCP)
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (get_hash(i1, i1 + mid - 1) == get_hash(i2, i2 + mid - 1)) {
+                lcp = mid;
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        
+        if (lcp == len1 && lcp == len2) return false;
+        if (lcp == len1) return true; // substring 1 is shorter, so it's strictly smaller
+        if (lcp == len2) return false;
+        
+        // Base comparator via the first unmatching character mapping
+        return s[i1 + lcp] < s[i2 + lcp];
+    };
+
+    int best_i = -1, best_j = -1;
+    auto update = [&](int i, int j) {
+        if (best_i == -1) {
+            best_i = i;
+            best_j = j;
+        } else {
+            if (cmp(best_i, best_j, i, j)) {
+                best_i = i;
+                best_j = j;
+            }
+        }
+    };
+
+    for (int i = 0; i <= n - l; i++) {
+        if (i > 0 && i < l) continue; // Prefix side wouldn't be evenly sliceable
+        
+        long long req = k - 1 - i / l;
+        long long R = (req > 0) ? req * l : 0LL; // Minimal suffix slice to cover constraints
+        
+        if (i + R + l <= n) {
+            int parts = (i > 0 ? 1 : 0) + (R > 0 ? 1 : 0);
+            if (parts <= k - 1) {
+                update(i, n - 1 - R); // Process localized optimal stretch
+            }
+        }
+    }
+
+    cout << "YES\n";
+    for (int i = best_i; i <= best_j; i++) {
+        cout << s[i];
+    }
+    cout << "\n";
+}
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    precompute();
+    
+    int t;
+    if (cin >> t) {
+        while (t--) {
+            solve();
+        }
+    }
+    return 0;
+}
 `,
 
         };
