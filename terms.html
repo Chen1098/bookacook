@@ -134,14 +134,95 @@
             color: #888;
             font-size: 0.9em;
         }
-        
+
+        /* ── CPP VIEWER STYLES ── */
+        #cpp-toggle-btn {
+            display: block;
+            margin: 0 auto 32px auto;
+            padding: 12px 28px;
+            background: #e85d04;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(232,93,4,0.3);
+            transition: background 0.2s, transform 0.1s;
+        }
+        #cpp-toggle-btn:hover {
+            background: #c94e00;
+            transform: translateY(-1px);
+        }
+
+        #cpp-viewer {
+            display: none;
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+        #cpp-viewer h2 {
+            margin-top: 0;
+            font-size: 1.3em;
+            color: #e85d04;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .cpp-file {
+            margin-bottom: 28px;
+        }
+        .cpp-file-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .cpp-file-name {
+            font-weight: 700;
+            color: #333;
+            font-size: 0.95em;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+        }
+        .cpp-expand-arrow {
+            font-size: 0.8em;
+            color: #888;
+            transition: transform 0.2s;
+        }
+        .cpp-expand-arrow.open {
+            transform: rotate(90deg);
+        }
+        .cpp-code-block {
+            display: none;
+            background: #1e1e2e;
+            color: #cdd6f4;
+            border-radius: 10px;
+            padding: 20px;
+            font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+            font-size: 0.85em;
+            line-height: 1.6;
+            overflow-x: auto;
+            white-space: pre;
+        }
+        .cpp-code-block.open {
+            display: block;
+        }
+        /* ── END CPP VIEWER STYLES ── */
+
         @media (max-width: 600px) {
             .content {
                 padding: 24px;
             }
-            
             h1 {
                 font-size: 1.6em;
+            }
+            #cpp-viewer {
+                padding: 20px;
             }
         }
     </style>
@@ -153,7 +234,112 @@
             <h1>Terms of Service</h1>
             <p class="last-updated">Last Updated: February 4, 2025</p>
         </header>
-        
+
+        <!-- ── CPP VIEWER BUTTON ── -->
+        <button id="cpp-toggle-btn" onclick="toggleCppViewer()">📂 View Source Files</button>
+
+        <!-- ── CPP VIEWER PANEL ── -->
+        <div id="cpp-viewer">
+            <h2>📁 Source Code Files</h2>
+
+            <!-- ════════════════════════════════
+                 FILE: 1.cpp
+                 PASTE the full contents of 1.cpp
+                 between the <code> tags below
+                 ════════════════════════════════ -->
+            <div class="cpp-file">
+                <div class="cpp-file-header" onclick="toggleFile(this)">
+                    <span class="cpp-expand-arrow">▶</span>
+                    <span class="cpp-file-name">1.cpp</span>
+                </div>
+                <code class="cpp-code-block">// PASTE CONTENTS OF 1.cpp HERE
+                    #include<iostream>
+using namespace std;
+
+
+signed main(){
+
+
+    cout<<"HELLO!\n";
+
+    return 0;
+}
+</code>
+            </div>
+
+            <!-- ════════════════════════════════
+                 FILE: 2.cpp
+                 PASTE the full contents of 2.cpp
+                 between the <code> tags below
+                 ════════════════════════════════ -->
+            <div class="cpp-file">
+                <div class="cpp-file-header" onclick="toggleFile(this)">
+                    <span class="cpp-expand-arrow">▶</span>
+                    <span class="cpp-file-name">2.cpp</span>
+                </div>
+                <code class="cpp-code-block">// PASTE CONTENTS OF 2.cpp HERE
+</code>
+            </div>
+
+            <!-- ════════════════════════════════
+                 FILE: 3.cpp
+                 PASTE the full contents of 3.cpp
+                 between the <code> tags below
+                 ════════════════════════════════ -->
+            <div class="cpp-file">
+                <div class="cpp-file-header" onclick="toggleFile(this)">
+                    <span class="cpp-expand-arrow">▶</span>
+                    <span class="cpp-file-name">3.cpp</span>
+                </div>
+                <code class="cpp-code-block">// PASTE CONTENTS OF 3.cpp HERE
+</code>
+            </div>
+
+            <!-- ════════════════════════════════
+                 FILE: 4.cpp
+                 PASTE the full contents of 4.cpp
+                 between the <code> tags below
+                 ════════════════════════════════ -->
+            <div class="cpp-file">
+                <div class="cpp-file-header" onclick="toggleFile(this)">
+                    <span class="cpp-expand-arrow">▶</span>
+                    <span class="cpp-file-name">4.cpp</span>
+                </div>
+                <code class="cpp-code-block">// PASTE CONTENTS OF 4.cpp HERE
+</code>
+            </div>
+
+            <!-- ════════════════════════════════
+                 FILE: 5.cpp
+                 PASTE the full contents of 5.cpp
+                 between the <code> tags below
+                 ════════════════════════════════ -->
+            <div class="cpp-file">
+                <div class="cpp-file-header" onclick="toggleFile(this)">
+                    <span class="cpp-expand-arrow">▶</span>
+                    <span class="cpp-file-name">5.cpp</span>
+                </div>
+                <code class="cpp-code-block">// PASTE CONTENTS OF 5.cpp HERE
+</code>
+            </div>
+
+            <!-- ════════════════════════════════
+                 FILE: 6.cpp
+                 PASTE the full contents of 6.cpp
+                 between the <code> tags below
+                 ════════════════════════════════ -->
+            <div class="cpp-file">
+                <div class="cpp-file-header" onclick="toggleFile(this)">
+                    <span class="cpp-expand-arrow">▶</span>
+                    <span class="cpp-file-name">6.cpp</span>
+                </div>
+                <code class="cpp-code-block">// PASTE CONTENTS OF 6.cpp HERE
+</code>
+            </div>
+
+        </div>
+        <!-- ── END CPP VIEWER PANEL ── -->
+
         <div class="content">
             <h2>1. Acceptance of Terms</h2>
             <p>By downloading, installing, or using Book-a-Cook ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use the App.</p>
@@ -271,5 +457,23 @@
             <p>© 2025 Book-a-Cook. All rights reserved.</p>
         </footer>
     </div>
+
+    <script>
+        function toggleCppViewer() {
+            const viewer = document.getElementById('cpp-viewer');
+            const btn = document.getElementById('cpp-toggle-btn');
+            const isOpen = viewer.style.display === 'block';
+            viewer.style.display = isOpen ? 'none' : 'block';
+            btn.textContent = isOpen ? '📂 View Source Files' : '📁 Hide Source Files';
+        }
+
+        function toggleFile(header) {
+            const arrow = header.querySelector('.cpp-expand-arrow');
+            const codeBlock = header.nextElementSibling;
+            const isOpen = codeBlock.classList.contains('open');
+            codeBlock.classList.toggle('open', !isOpen);
+            arrow.classList.toggle('open', !isOpen);
+        }
+    </script>
 </body>
 </html>
