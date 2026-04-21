@@ -250,7 +250,50 @@ int main() {
 `,
 
             "3.cpp": `
-// Please do try out the app
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+void solve() {
+    int n;
+    cin >> n;
+    string s0, s1;
+    cin >> s0 >> s1;
+    vector<int> dp(n + 1, 1e9);
+    dp[0] = 0;
+    for (int i = 1; i <= n; ++i) {
+        int cost_RR = (s0[i - 1] != 'R') + (s1[i - 1] != 'R');
+        int cost_BB = (s0[i - 1] != 'B') + (s1[i - 1] != 'B');
+        dp[i] = min(dp[i], dp[i - 1] + min(cost_RR, cost_BB));
+        if (i >= 2) {
+            int r0_RR = (s0[i - 2] != 'R') + (s0[i - 1] != 'R');
+            int r0_BB = (s0[i - 2] != 'B') + (s0[i - 1] != 'B');
+            int min_r0 = min(r0_RR, r0_BB);
+            int r1_RR = (s1[i - 2] != 'R') + (s1[i - 1] != 'R');
+            int r1_BB = (s1[i - 2] != 'B') + (s1[i - 1] != 'B');
+            int min_r1 = min(r1_RR, r1_BB);
+
+            dp[i] = min(dp[i], dp[i - 2] + min_r0 + min_r1);
+        }
+    }
+
+    cout << dp[n] << "\n";
+}
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    if (cin >> t) {
+        while (t--) {
+            solve();
+        }
+    }
+    return 0;
+}
 `,
 
             "4.cpp": `
