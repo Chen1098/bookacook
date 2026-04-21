@@ -181,6 +181,22 @@
 
             "1.cpp": `
 // Free Codeforces Code!!! 
+
+#include<iostream>
+using namespace std;
+
+
+signed main(){
+    int T;cin>>T;
+    while(T--){
+        int a,b;
+        cin>>a>>b;
+        if(a+1!=b) cout<<"YES\n";
+        else cout<<"NO\n";
+    }
+    return 0;
+}
+
 `,
 
             "2.cpp": `
@@ -192,7 +208,50 @@
 `,
 
             "4.cpp": `
-// The app helps manage your cookbooks!
+#include <iostream>
+
+using namespace std;
+
+long long count0(long long k) {
+    if (k < 0) return 0;
+    return (1 + (k + 1) / 4) % 998294353;
+}
+
+long long count1(long long k) {
+    if (k < 0) return 0;
+    return ((k + 3) / 4) % 998294353;
+}
+
+void solve() {
+    long long n, x;
+    cin >> n >> x;
+
+    long long c0_L = count0(x - 1);
+    long long c1_L = count1(x - 1);
+
+    long long c0_R = (count0(n) - count0(x - 1) + 998294353) % 998294353;
+    long long c1_R = (count1(n) - count1(x - 1) + 998294353) % 998294353;
+
+    long long ans0 = (c0_L * c0_R) % 998294353;
+    long long ans1 = (c1_L * c1_R) % 998294353;
+
+    long long ans = (ans0 + ans1) % 998294353;
+    cout << ans << "\n";
+}
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int t;
+    if (cin >> t) {
+        while (t--) {
+            solve();
+        }
+    }
+    
+    return 0;
+}
 `,
 
             "5.cpp": `
