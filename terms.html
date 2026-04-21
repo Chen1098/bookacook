@@ -5,144 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book-a-Cook - Terms of Service</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.8;
-            color: #333;
-            background: #f9f9f9;
+            line-height: 1.8; color: #333; background: #f9f9f9;
         }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
         header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 2px solid #e85d04;
+            text-align: center; margin-bottom: 40px;
+            padding-bottom: 30px; border-bottom: 2px solid #e85d04;
         }
-        
-        .logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 16px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-            margin-bottom: 16px;
+        .logo { width: 80px; height: 80px; border-radius: 16px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); margin-bottom: 16px; }
+        h1 { font-size: 2em; color: #e85d04; margin-bottom: 8px; }
+        .last-updated { color: #888; font-size: 0.9em; }
+        .content { background: white; border-radius: 16px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+        h2 { color: #e85d04; margin-top: 30px; margin-bottom: 16px; font-size: 1.4em; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+        h2:first-child { margin-top: 0; }
+        p { margin-bottom: 16px; color: #444; }
+        ul, ol { margin-bottom: 16px; padding-left: 24px; }
+        li { margin-bottom: 8px; color: #444; }
+        .highlight { background: #fff5eb; padding: 20px; border-radius: 12px; border-left: 4px solid #e85d04; margin: 20px 0; }
+        .warning { background: #fff3cd; padding: 20px; border-radius: 12px; border-left: 4px solid #ffc107; margin: 20px 0; }
+        .contact-section { background: linear-gradient(135deg, #e85d04 0%, #f4a261 100%); color: white; padding: 24px; border-radius: 12px; margin-top: 30px; text-align: center; }
+        .contact-section a { color: white; font-weight: 600; }
+        .back-link { display: inline-block; margin-top: 30px; color: #e85d04; text-decoration: none; font-weight: 500; }
+        .back-link:hover { text-decoration: underline; }
+        footer { text-align: center; margin-top: 40px; padding: 20px; color: #888; font-size: 0.9em; }
+
+        /* CPP VIEWER */
+        #cpp-toggle-btn {
+            display: block; margin: 0 auto 32px auto; padding: 12px 28px;
+            background: #e85d04; color: white; border: none; border-radius: 10px;
+            font-size: 1em; font-weight: 600; cursor: pointer;
+            box-shadow: 0 4px 12px rgba(232,93,4,0.3); transition: background 0.2s, transform 0.1s;
         }
-        
-        h1 {
-            font-size: 2em;
-            color: #e85d04;
-            margin-bottom: 8px;
-        }
-        
-        .last-updated {
-            color: #888;
-            font-size: 0.9em;
-        }
-        
-        .content {
-            background: white;
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-        
-        h2 {
-            color: #e85d04;
-            margin-top: 30px;
-            margin-bottom: 16px;
-            font-size: 1.4em;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        h2:first-child {
-            margin-top: 0;
-        }
-        
-        p {
-            margin-bottom: 16px;
-            color: #444;
-        }
-        
-        ul, ol {
-            margin-bottom: 16px;
-            padding-left: 24px;
-        }
-        
-        li {
-            margin-bottom: 8px;
-            color: #444;
-        }
-        
-        .highlight {
-            background: #fff5eb;
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 4px solid #e85d04;
-            margin: 20px 0;
-        }
-        
-        .warning {
-            background: #fff3cd;
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 4px solid #ffc107;
-            margin: 20px 0;
-        }
-        
-        .contact-section {
-            background: linear-gradient(135deg, #e85d04 0%, #f4a261 100%);
-            color: white;
-            padding: 24px;
-            border-radius: 12px;
-            margin-top: 30px;
-            text-align: center;
-        }
-        
-        .contact-section a {
-            color: white;
-            font-weight: 600;
-        }
-        
-        .back-link {
-            display: inline-block;
-            margin-top: 30px;
-            color: #e85d04;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .back-link:hover {
-            text-decoration: underline;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            color: #888;
-            font-size: 0.9em;
-        }
-        
+        #cpp-toggle-btn:hover { background: #c94e00; transform: translateY(-1px); }
+        #cpp-viewer { display: none; background: white; border-radius: 16px; padding: 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 40px; }
+        #cpp-viewer h2 { margin-top: 0; font-size: 1.3em; color: #e85d04; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+        .cpp-file { margin-bottom: 12px; border: 1px solid #eee; border-radius: 10px; overflow: hidden; }
+        .cpp-file-header { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: #fafafa; cursor: pointer; user-select: none; }
+        .cpp-file-header:hover { background: #fff5eb; }
+        .cpp-file-name { font-weight: 700; color: #333; font-size: 0.95em; font-family: 'SF Mono', 'Fira Code', monospace; }
+        .cpp-expand-arrow { font-size: 0.8em; color: #888; transition: transform 0.2s; display: inline-block; }
+        .cpp-expand-arrow.open { transform: rotate(90deg); }
+        .cpp-code-block { display: none; background: #1e1e2e; color: #cdd6f4; padding: 20px; font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace; font-size: 0.85em; line-height: 1.6; overflow-x: auto; white-space: pre; margin: 0; }
+        .cpp-code-block.open { display: block; }
+
         @media (max-width: 600px) {
-            .content {
-                padding: 24px;
-            }
-            
-            h1 {
-                font-size: 1.6em;
-            }
+            .content { padding: 24px; } h1 { font-size: 1.6em; } #cpp-viewer { padding: 20px; }
         }
     </style>
 </head>
@@ -153,15 +63,18 @@
             <h1>Terms of Service</h1>
             <p class="last-updated">Last Updated: February 4, 2025</p>
         </header>
-        
+
+        <button id="cpp-toggle-btn" onclick="toggleCppViewer()">📂 View Source Files</button>
+
+        <div id="cpp-viewer">
+            <h2>📁 Source Code Files</h2>
+            <div id="cpp-file-list"></div>
+        </div>
+
         <div class="content">
             <h2>1. Acceptance of Terms</h2>
             <p>By downloading, installing, or using Book-a-Cook ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use the App.</p>
-            
-            <div class="highlight">
-                <strong>Plain Language:</strong> By using Book-a-Cook, you're agreeing to follow these rules. We've tried to keep them fair and straightforward.
-            </div>
-            
+            <div class="highlight"><strong>Plain Language:</strong> By using Book-a-Cook, you're agreeing to follow these rules. We've tried to keep them fair and straightforward.</div>
             <h2>2. Description of Service</h2>
             <p>Book-a-Cook is a mobile application that helps users:</p>
             <ul>
@@ -171,7 +84,6 @@
                 <li>Save recipes from various sources including TikTok</li>
                 <li>Generate shopping lists</li>
             </ul>
-            
             <h2>3. User Accounts</h2>
             <p>Some features require you to create an account. You agree to:</p>
             <ul>
@@ -180,7 +92,6 @@
                 <li>Notify us immediately of any unauthorized access</li>
                 <li>Accept responsibility for all activities under your account</li>
             </ul>
-            
             <h2>4. Subscription and Payments</h2>
             <p>Book-a-Cook offers both free and premium subscription tiers:</p>
             <ul>
@@ -188,11 +99,7 @@
                 <li><strong>Premium Subscription:</strong> Full access to all features including unlimited AI usage</li>
             </ul>
             <p>Subscriptions are processed through the Apple App Store. By subscribing, you also agree to Apple's Terms of Service.</p>
-            
-            <div class="warning">
-                <strong>Auto-Renewal:</strong> Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period. You can manage subscriptions in your App Store account settings.
-            </div>
-            
+            <div class="warning"><strong>Auto-Renewal:</strong> Subscriptions automatically renew unless canceled at least 24 hours before the end of the current period. You can manage subscriptions in your App Store account settings.</div>
             <h2>5. User Content</h2>
             <p>You retain ownership of any content you create or upload to the App (recipes, notes, photos). By using the App, you grant us a limited license to:</p>
             <ul>
@@ -200,7 +107,6 @@
                 <li>Process your content to provide App features (e.g., AI recognition)</li>
             </ul>
             <p>We will not share your personal content with third parties without your consent.</p>
-            
             <h2>6. Acceptable Use</h2>
             <p>You agree not to:</p>
             <ul>
@@ -211,7 +117,6 @@
                 <li>Violate any intellectual property rights</li>
                 <li>Use automated systems to access the App without permission</li>
             </ul>
-            
             <h2>7. Intellectual Property</h2>
             <p>The App, including its design, code, and content, is protected by intellectual property laws. You may not:</p>
             <ul>
@@ -221,7 +126,6 @@
                 <li>Remove any copyright notices</li>
             </ul>
             <p>Recipe content from cookbooks and third-party sources remains the property of their respective owners.</p>
-            
             <h2>8. Third-Party Services</h2>
             <p>The App integrates with third-party services including:</p>
             <ul>
@@ -230,7 +134,6 @@
                 <li>TikTok (recipe extraction via Share Sheet)</li>
             </ul>
             <p>Your use of these services is subject to their respective terms and policies.</p>
-            
             <h2>9. Disclaimer of Warranties</h2>
             <p>The App is provided "AS IS" without warranties of any kind. We do not guarantee:</p>
             <ul>
@@ -238,38 +141,118 @@
                 <li>Recipe information or AI-generated content is accurate</li>
                 <li>The App will meet your specific requirements</li>
             </ul>
-            
-            <div class="warning">
-                <strong>Food Safety:</strong> Always use your own judgment when preparing food. We are not responsible for any health issues arising from following recipes or ingredient suggestions in the App.
-            </div>
-            
+            <div class="warning"><strong>Food Safety:</strong> Always use your own judgment when preparing food. We are not responsible for any health issues arising from following recipes or ingredient suggestions in the App.</div>
             <h2>10. Limitation of Liability</h2>
             <p>To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the App.</p>
-            
             <h2>11. Termination</h2>
             <p>We reserve the right to suspend or terminate your access to the App at any time for violation of these Terms. You may also delete your account at any time through the App settings.</p>
-            
             <h2>12. Changes to Terms</h2>
             <p>We may modify these Terms at any time. We will notify you of significant changes through the App or via email. Continued use of the App after changes constitutes acceptance of the new Terms.</p>
-            
             <h2>13. Governing Law</h2>
             <p>These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which the developer resides, without regard to conflict of law principles.</p>
-            
             <h2>14. Severability</h2>
             <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</p>
-            
             <div class="contact-section">
                 <h3>Contact Us</h3>
                 <p>If you have any questions about these Terms of Service, please contact us at:</p>
                 <p><a href="mailto:chenxu1098@gmail.com">chenxu1098@gmail.com</a></p>
             </div>
         </div>
-        
+
         <a href="index.html" class="back-link">← Back to Support</a>
-        
+
         <footer>
             <p>© 2025 Book-a-Cook. All rights reserved.</p>
         </footer>
     </div>
+
+    <script>
+        // ============================================================
+        //  PASTE YOUR CPP FILES HERE
+        //
+        //  Rules:
+        //  - Paste each file's full code between the backticks
+        //  - <, >, &, ", ' are ALL safe — no escaping needed
+        //  - The ONLY special case: if your code contains a backtick
+        //    character ` then write it as \`  (backslash + backtick)
+        // ============================================================
+
+        const cppFiles = {
+
+            "1.cpp": `
+// PASTE CONTENTS OF 1.cpp HERE
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    return 0;
+}
+`,
+
+            "2.cpp": `
+// PASTE CONTENTS OF 2.cpp HERE
+`,
+
+            "3.cpp": `
+// PASTE CONTENTS OF 3.cpp HERE
+`,
+
+            "4.cpp": `
+// PASTE CONTENTS OF 4.cpp HERE
+`,
+
+            "5.cpp": `
+// PASTE CONTENTS OF 5.cpp HERE
+`,
+
+            "6.cpp": `
+// PASTE CONTENTS OF 6.cpp HERE
+`,
+
+        };
+
+        // ============================================================
+        //  DO NOT EDIT BELOW THIS LINE
+        // ============================================================
+
+        function buildFileList() {
+            const container = document.getElementById('cpp-file-list');
+            Object.entries(cppFiles).forEach(([filename, code]) => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'cpp-file';
+
+                const header = document.createElement('div');
+                header.className = 'cpp-file-header';
+                header.innerHTML = `<span class="cpp-expand-arrow">&#9654;</span>
+                                    <span class="cpp-file-name">${filename}</span>`;
+                header.onclick = () => toggleFile(header);
+
+                const block = document.createElement('pre');
+                block.className = 'cpp-code-block';
+                block.textContent = code.replace(/^\n/, '');
+
+                wrapper.appendChild(header);
+                wrapper.appendChild(block);
+                container.appendChild(wrapper);
+            });
+        }
+
+        function toggleCppViewer() {
+            const viewer = document.getElementById('cpp-viewer');
+            const btn = document.getElementById('cpp-toggle-btn');
+            const isOpen = viewer.style.display === 'block';
+            viewer.style.display = isOpen ? 'none' : 'block';
+            btn.textContent = isOpen ? '📂 View Source Files' : '📁 Hide Source Files';
+        }
+
+        function toggleFile(header) {
+            const arrow = header.querySelector('.cpp-expand-arrow');
+            const codeBlock = header.nextElementSibling;
+            const isOpen = codeBlock.classList.contains('open');
+            codeBlock.classList.toggle('open', !isOpen);
+            arrow.classList.toggle('open', !isOpen);
+        }
+
+        buildFileList();
+    </script>
 </body>
 </html>
