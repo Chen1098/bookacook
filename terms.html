@@ -182,21 +182,33 @@
             "1.cpp": `
 // Free Codeforces Code!!! 
 
-#include<iostream>
+#include <iostream>
+
 using namespace std;
 
-
-signed main(){
-    int T;cin>>T;
-    while(T--){
-        int a,b;
-        cin>>a>>b;
-        if(a+1!=b) cout<<"YES\n";
-        else cout<<"NO\n";
+void solve() {
+    long long x, y;
+    cin >> x >> y;
+    if (y / x > 2) {
+        cout << "YES\n";
+    } else {
+        cout << "NO\n";
     }
-    return 0;
 }
 
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
+    int t;
+    if (cin >> t) {
+        while (t--) {
+            solve();
+        }
+    }
+    
+    return 0;
+}
 `,
 
             "2.cpp": `
