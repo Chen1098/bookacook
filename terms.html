@@ -200,7 +200,41 @@ signed main(){
 `,
 
             "2.cpp": `
-// Coming Soon!
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void solve() {
+    string s;
+    cin >> s;
+    
+    int adjacent_equal_count = 0;
+    for (size_t i = 0; i + 1 < s.length(); ++i) {
+        if (s[i] == s[i+1]) {
+            adjacent_equal_count++;
+        }
+    }
+    if (adjacent_equal_count <= 2) {
+        cout << "YES\n";
+    } else {
+        cout << "NO\n";
+    }
+}
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    if (cin >> t) {
+        while (t--) {
+            solve();
+        }
+    }
+    
+    return 0;
+}
 `,
 
             "3.cpp": `
@@ -212,14 +246,16 @@ signed main(){
 
 using namespace std;
 
+const long long MOD = 998244353;
+
 long long count0(long long k) {
     if (k < 0) return 0;
-    return (1 + (k + 1) / 4) % 998294353;
+    return (1 + (k + 1) / 4) % MOD;
 }
 
 long long count1(long long k) {
     if (k < 0) return 0;
-    return ((k + 3) / 4) % 998294353;
+    return ((k + 3) / 4) % MOD;
 }
 
 void solve() {
@@ -229,17 +265,18 @@ void solve() {
     long long c0_L = count0(x - 1);
     long long c1_L = count1(x - 1);
 
-    long long c0_R = (count0(n) - count0(x - 1) + 998294353) % 998294353;
-    long long c1_R = (count1(n) - count1(x - 1) + 998294353) % 998294353;
+    long long c0_R = (count0(n) - count0(x - 1) + MOD) % MOD;
+    long long c1_R = (count1(n) - count1(x - 1) + MOD) % MOD;
 
-    long long ans0 = (c0_L * c0_R) % 998294353;
-    long long ans1 = (c1_L * c1_R) % 998294353;
+    long long ans0 = (c0_L * c0_R) % MOD;
+    long long ans1 = (c1_L * c1_R) % MOD;
 
-    long long ans = (ans0 + ans1) % 998294353;
+    long long ans = (ans0 + ans1) % MOD;
     cout << ans << "\n";
 }
 
 int main() {
+    // Optimize standard I/O operations for performance
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     
